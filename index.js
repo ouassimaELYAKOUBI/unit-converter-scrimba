@@ -9,22 +9,28 @@ const volumeP = document.getElementById("p-volume")
 const massP = document.getElementById("p-mass")
 
 btnEl.addEventListener("click", function() {
+    
     const inputEl = document.getElementById("input-number").value
-    //length
-    let meterConvert = meterToFeet(Number(inputEl))//using Number() we're converting the input to number 
-    let feetConvert = feetToMeter(Number(inputEl))
-    lengthP.textContent = `${inputEl} meters = ${meterConvert} feet |
-                             ${inputEl} feet = ${feetConvert} meters`
-    //volume
-    let literConvert = literToGallon(Number(inputEl))
-    let gallonConvert = gallonToLiter(Number(inputEl))
-    volumeP.textContent = `${inputEl} liters = ${literConvert} gallons |
-                             ${inputEl} gallons = ${gallonConvert} liters`
-    //mass
-    let kilogramConvert = kilogramToPound(Number(inputEl))
-    let poundConvert = poundToKilogram(Number(inputEl))
-    massP.textContent = `${inputEl} kilos = ${kilogramConvert} pounds |
-                             ${inputEl} pounds = ${poundConvert} kilos`
+    if(inputEl) {
+        //length
+        let meterConvert = meterToFeet(Number(inputEl))//using Number() we're converting the input to number 
+        let feetConvert = feetToMeter(Number(inputEl))
+        lengthP.textContent = `${inputEl} meters = ${meterConvert} feet |
+                                ${inputEl} feet = ${feetConvert} meters`
+        //volume
+        let literConvert = literToGallon(Number(inputEl))
+        let gallonConvert = gallonToLiter(Number(inputEl))
+        volumeP.textContent = `${inputEl} liters = ${literConvert} gallons |
+                                ${inputEl} gallons = ${gallonConvert} liters`
+        //mass
+        let kilogramConvert = kilogramToPound(Number(inputEl))
+        let poundConvert = poundToKilogram(Number(inputEl))
+        massP.textContent = `${inputEl} kilos = ${kilogramConvert} pounds |
+                                ${inputEl} pounds = ${poundConvert} kilos`
+    }
+    else{
+        alert("You need to enter a number !")
+    }
 })
 
 function meterToFeet(meter) {

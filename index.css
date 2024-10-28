@@ -34,6 +34,12 @@ header h2 {
     font-size: xxx-large;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 #convert-btn {
     background-color: white;
     color: #3D3D3D;
